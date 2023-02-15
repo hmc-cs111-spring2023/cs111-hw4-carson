@@ -1,5 +1,1 @@
-def collatz (x: Int) = {
-    if (x%2 == 0) x/2 else 3*x + 1
-}
-
-
+@main def collatz(n: Int) = {if n % 2 == 0 then n / 2 else 3 * n + 1}

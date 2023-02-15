@@ -12,4 +12,9 @@ class CollatzSpec extends AnyFunSuite with Matchers:
     test ("6") {collatz(101) should be (304)}
     test ("7") {collatz(100) should be (50)}
 
+    test ("8") {collatzCount(1) should be (0)}
+    test ("9") {collatzCount(101) should be (25)}
+    test ("10") {collatzCount(1111) should be (31)}
+    test ("11") {collatzCount(267) should be (21)}
+
 end CollatzSpec

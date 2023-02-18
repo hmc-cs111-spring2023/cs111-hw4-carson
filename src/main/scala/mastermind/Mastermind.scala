@@ -12,20 +12,23 @@ type Board = String
 val validColors = List('B', 'Y', 'R', 'G')
 
 /** Get a random color from the list of valid colors */
-def getRandomColor(): Color =
-  ???
+def getRandomColor(): Color = {
+  Random.shuffle(validColors).head
+}
 
 /** Given four colors, make a board from them */
 def makeBoardFromColors(c1: Color, c2: Color, c3: Color, c4: Color): Board =
-  ???
+  "" + c1 + c2 + c3 + c4
 
 /** Create a random board */
 def getRandomBoard(): Board =
-  ???
+  makeBoardFromColors(getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor())
 
 /** Play one round of the game */
 def playRound(board: Board): (Int, Int) =
-  ???
+  print("Enter Guess: ")
+  val guess = readLine()
+  scoreGuess(board, guess)
 
 /** Score a guess
   *
@@ -45,7 +48,7 @@ def scoreGuess(board: Board, guess: Board): (Int, Int) = {
   // Check each guess position against the corresponding board position
   // or (if there is not a match at that position) against the remainder of
   // the board.
-  for (i <- 0 to 3) {
+  for (i <-0 to 3) {
     if (guess(i) == board(i)) {
       correctPositions += 1
     } else if (boardColors.contains(guess(i))) {
